@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Web</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/index.js"></script>
+</head>
+
+<body>
+    <h1>Слово для перевода</h1>
+    <h3 id="word-for-translate"></h3>
+
+    <form class="translate-input-form">
+        <label>ИД слова</label>
+        <input id="id-word" type="text" name="id" value="">
+        <hr>
+        <label>Введите перевод слова</label>
+        <input type="text" name="ruWord" placeholder="русский перевод" value="">
+    </form>
+    <button id="btn-check-word">Check word</button>
+    <button id="btn-next-word">Next word</button>
+</body>
+</html>

@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS vocabulary;
+
+CREATE TABLE vocabulary
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    enWord VARCHAR(250) NOT NULL,
+    ruWord VARCHAR(250) NOT NULL,
+    type VARCHAR(250) NOT NULL
+);
