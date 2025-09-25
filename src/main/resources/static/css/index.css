@@ -4,3 +4,16 @@ input[name="id"] {
     visibility: hidden;
 }
 */
+
+
+html, body {
+    height: 100%;               /* растягиваем фон на всю страницу */
+    font-family: sans-serif;    /* новый шрифт без засечек */
+    font-size: 18px;            /* размер шрифта на всей странице */
+    text-align: -webkit-center;
+}
+
+
+
+
+

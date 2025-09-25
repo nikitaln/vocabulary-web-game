@@ -9,17 +9,26 @@
 </head>
 
 <body>
-    <h1>Слово для перевода</h1>
+    <div id="main">
+
+    </div>
+
+
+    <h1>Игра: Перевед Слов</h1>
     <h3 id="word-for-translate"></h3>
 
     <form class="translate-input-form">
         <label>ИД слова</label>
         <input id="id-word" type="text" name="id" value="">
         <hr>
+        <label>Слово для перевода</label>
+        <input id="output-en-word" type="text" name="enWord" value="">
+        <button type="button" id="btn-next-word">Next word</button>
+        <hr>
         <label>Введите перевод слова</label>
-        <input type="text" name="ruWord" placeholder="русский перевод" value="">
+        <input id="input-ru-word" type="text" name="ruWord" placeholder="русский перевод" value="">
+        <button type="button" id="btn-check-word">Check word</button>
     </form>
-    <button id="btn-check-word">Check word</button>
-    <button id="btn-next-word">Next word</button>
+
 </body>
 </html>

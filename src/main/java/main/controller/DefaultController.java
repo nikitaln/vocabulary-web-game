@@ -12,6 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
+/**
+ * TODO: Добавить алгоритм проверки русских слов
+ * TODO: Очищать поле ввода русского слова в JavaScript после каждой проверки
+ * TODO: Если ответ true - вывод нового слова - автоматически
+ * TODO: Добавить счет правильных слов и не правильных слов (статистика)
+ * TODO: Добавить кнопку помощи (перевод слова)
+ * TODO: Создавать отдельную коллекцию не переведенных слов
+ */
+
 @Controller
 @RequestMapping()
 public class DefaultController {
@@ -35,25 +45,20 @@ public class DefaultController {
         System.out.println("id=" + word.getId());
         System.out.println("ruWord=" + word.getRuWord());
 
-//        System.out.println("входящее слово = " + word.getEnWord());
-//
-//        Word wordById = vocabularyService.getWordById(word.getId());
-//
-//        if (word.getEnWord().equals(wordById.getEnWord())) {
-//            System.out.println("true = " + wordById.getEnWord());
-//            return "index";
-//        } else {
-//            System.out.println("false = " + wordById.getEnWord());
-//            return "index";
-//        }
-        return ResponseEntity.ok("true");
+        String ruWordFromDB = vocabularyService.getWordById(word.getId()).getRuWord();
+        String ruWordFromWeb = word.getRuWord();
+
+        if (ruWordFromDB.equals(ruWordFromWeb)) {
+            return ResponseEntity.ok("true");
+
+        } else return ResponseEntity.ok("false");
     }
 
 
     @RequestMapping(value = "/newWord", method = RequestMethod.GET)
     public ResponseEntity<EnWord> getNewRandomWord() {
         Word word = vocabularyService.getRandomWord();
-        System.out.println("GET-method: /newWord (" + word.getEnWord() + ")");
+        System.out.println("GET-method: /newWord (" + word.getEnWord() + ")" + " / (" + word.getRuWord() + ")");
         EnWord enWord = new EnWord(word.getId(), word.getEnWord());
         return ResponseEntity.ok(enWord);
     }

@@ -12,6 +12,14 @@ $(function(){
             data: ruWord,
             success: function(response){
                 alert("Post-Controller return = " + response);
+                $('#input-ru-word').val('');
+
+                if (response === 'true') {
+                    alert('HELLO ITS TRUE');
+                    getNewWord();
+                } else {
+                    alert('HELLO ITS FALSE');
+                }
             }
         });
     });
@@ -39,9 +47,10 @@ $(function(){
                     $('#word-for-translate').text(enWordDTO.enWord);
                     // Получаем элемент input
                     const inputElement = document.getElementById('id-word');
-
+                    const inputElementForOutputWord = document.getElementById('output-en-word');
                     // Устанавливаем значение
                     inputElement.value = enWordDTO.id;
+                    inputElementForOutputWord.value = enWordDTO.enWord;
 
                 }
             });
