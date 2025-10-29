@@ -11,24 +11,61 @@
 <body>
     <div id="main">
 
+        <div id="top-block">
+            <div id="title">
+                <h2>Игра на знание английских слов</h2>
+            </div>
+
+            <div id="statistics">
+                <h3>Результаты</h3>
+                <table>
+                    <tr>
+                        <th scope="col">Правильно:</th>
+                        <td>
+                            <div class="result-count" id="right-translate">
+                                <output>12</output>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Неправильно:</th>
+                        <td>
+                            <div class="result-count" id="wrong-translate">
+                                <output>35</output>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="bottom-block">
+            <div id="form-container">
+                <h3 id="word-for-translate"></h3>
+                <form class="translate-input-form">
+
+                    <div class="form-id">
+                        <label>ИД слова</label>
+                        <input id="id-word" type="text" name="id" value="">
+                    </div>
+
+                    <div class="form-word-en">
+                        <label>Слово для перевода</label>
+                        <input id="output-en-word" type="text" name="enWord" value="">
+                        <button type="button" id="btn-next-word">Next</button>
+                        <button type="button" id="btn-help">Help</button>
+                    </div>
+
+                    <div class="form-word-ru">
+                        <label>Введите перевод слова</label>
+                        <input id="input-ru-word" type="text" name="ruWord" placeholder="русский перевод" value="">
+                        <button type="button" id="btn-check-word">Check</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
     </div>
-
-
-    <h1>Игра: Перевед Слов</h1>
-    <h3 id="word-for-translate"></h3>
-
-    <form class="translate-input-form">
-        <label>ИД слова</label>
-        <input id="id-word" type="text" name="id" value="">
-        <hr>
-        <label>Слово для перевода</label>
-        <input id="output-en-word" type="text" name="enWord" value="">
-        <button type="button" id="btn-next-word">Next word</button>
-        <hr>
-        <label>Введите перевод слова</label>
-        <input id="input-ru-word" type="text" name="ruWord" placeholder="русский перевод" value="">
-        <button type="button" id="btn-check-word">Check word</button>
-    </form>
-
 </body>
 </html>

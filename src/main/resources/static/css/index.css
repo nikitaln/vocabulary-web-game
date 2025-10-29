@@ -9,11 +9,113 @@ input[name="id"] {
 html, body {
     height: 100%;               /* растягиваем фон на всю страницу */
     font-family: sans-serif;    /* новый шрифт без засечек */
-    font-size: 18px;            /* размер шрифта на всей странице */
+    font-size: 16px;            /* размер шрифта на всей странице */
     text-align: -webkit-center;
 }
 
+#main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid red;
+    width: 800px;
+    height: 400px;
+}
 
 
+#top-block {
+    display: flex;
+    border: 1px solid grey;
+    width: 800px;
+    height: 150px;
+}
 
 
+#title {
+    /*border: 1px solid grey;*/
+    width: 500px;
+}
+
+
+#statistics {
+    /*border: 1px solid grey;*/
+    width: 300px;
+}
+
+
+#form-container {
+    width: 700px;
+    height: 150px;
+    border: 3px solid;
+    margin-top: 50px;
+    background: beige;
+}
+
+.form-id {
+    display: flex;  /*позволяет двигать элементы*/
+    justify-content: center;    /*располагает элемент по центру*/
+}
+
+.form-word-en {
+    display: flex;
+    margin-left: 126px;
+    margin-top: 5px;
+}
+
+
+.form-word-ru {
+    display: flex;
+    margin-left: 105px;
+    margin-top: 5px;
+}
+
+
+button {
+    margin: 5px;
+    height: 30px;
+    width: 70px;
+    background: burlywood;
+}
+
+
+input {
+    height: 30px;
+    width: 200px;
+    margin-left: 5px;
+}
+
+
+label {
+    align-content: center;
+}
+
+
+#title {
+    align-content: center;
+}
+
+
+.result-count {
+    width: 40px;
+    height: 20px;
+    border-radius: 6px;
+    text-align-last: center;
+}
+
+
+#right-translate {
+    background: darkseagreen;
+    border: solid 3px green;
+}
+
+
+#wrong-translate {
+    background: darksalmon;
+    border: solid 3px red;
+}
+
+
+tr {
+    text-align: end;
+}

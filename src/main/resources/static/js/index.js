@@ -18,7 +18,9 @@ $(function(){
                     alert('HELLO ITS TRUE');
                     getNewWord();
                 } else {
-                    alert('HELLO ITS FALSE');
+
+                alert('HELLO ITS FALSE');
+                $('#input-ru-word').css('background', 'red');
                 }
             }
         });
@@ -44,7 +46,7 @@ $(function(){
 //                    alert(data.ruWord);
 
                     //добавили слово на страницу
-                    $('#word-for-translate').text(enWordDTO.enWord);
+                    //$('#word-for-translate').text(enWordDTO.enWord);
                     // Получаем элемент input
                     const inputElement = document.getElementById('id-word');
                     const inputElementForOutputWord = document.getElementById('output-en-word');
