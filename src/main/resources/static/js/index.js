@@ -11,16 +11,17 @@ $(function(){
             dataType: 'text',
             data: ruWord,
             success: function(response){
-                alert("Post-Controller return = " + response);
+
                 $('#input-ru-word').val('');
 
                 if (response === 'true') {
-                    alert('HELLO ITS TRUE');
-                    getNewWord();
+
+                    $('#result-translate').text('Верно');
+
                 } else {
 
-                alert('HELLO ITS FALSE');
-                $('#input-ru-word').css('background', 'red');
+                $('#result-translate').text('Неверно');
+
                 }
             }
         });
