@@ -16,11 +16,11 @@ $(function(){
 
                 if (response === 'true') {
 
-                    $('#result-translate').text('Верно');
+                    $('#result-translate').text('Верный перевод').css('color', 'green');
 
                 } else {
 
-                $('#result-translate').text('Неверно');
+                $('#result-translate').text('Неверный перевод').css('color', 'red');
 
                 }
             }
