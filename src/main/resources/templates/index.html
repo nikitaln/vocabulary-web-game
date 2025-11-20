@@ -46,21 +46,22 @@
 
                 <form class="translate-input-form">
 
+                    <div class="form-word-en">
+                        <output id="output-en-word" type="text" name="enWord" value="">press Next</output>
+                    </div>
+
                     <div class="form-id">
-                        <label>ИД слова</label>
                         <input id="id-word" type="text" name="id" value="">
                     </div>
 
-                    <div class="form-word-en">
-                        <output id="output-en-word" type="text" name="enWord" value=""></output>
-                        <button type="button" id="btn-next-word">Next</button>
-                        <button type="button" id="btn-help">Help</button>
+                    <div class="form-word-ru">
+                        <input id="input-ru-word" type="text" name="ruWord" placeholder="русский перевод" value="">
                     </div>
 
-                    <div class="form-word-ru">
-                        <label>Введите перевод слова</label>
-                        <input id="input-ru-word" type="text" name="ruWord" placeholder="русский перевод" value="">
+                    <div class="button-panel">
                         <button type="button" id="btn-check-word">Check</button>
+                        <button type="button" id="btn-next-word">Next</button>
+                        <button type="button" id="btn-help">Help</button>
                     </div>
 
                 </form>
