@@ -15,12 +15,16 @@ $(function(){
                 $('#input-ru-word').val('');
 
                 if (response === 'true') {
-
-                    $('#result-translate').text('Верный перевод').css('color', 'green');
+//                    $('#result-frame').css('display', 'flex');
+//                    $('#result').text('Верно').css('color', 'green');
+                    $('#output-en-word').css('color', 'greenyellow');
+                    $('#btn-check-word').css('display', 'none');
 
                 } else {
-
-                $('#result-translate').text('Неверный перевод').css('color', 'red');
+                //$('#result-translate').text('Неверный перевод').css('color', 'red');
+//                    $('#result-frame').css('display', 'flex');
+//                    $('#result').text('Неверно').css('color', 'red');
+                    $('#output-en-word').css('color', 'red');
 
                 }
             }
@@ -29,6 +33,8 @@ $(function(){
 
     //кнопка СЛЕДУЮЩЕГО СЛОВА
     $('#btn-next-word').click(function(){
+        $('#btn-check-word').css('display', 'flex');
+        $('#output-en-word').css('color', 'white');
            //вызов  функции
         getNewWord();
 
@@ -67,6 +73,12 @@ $(function(){
         alert(); //английское слово
 
     }
+
+
+    //кпопка продолжить
+    $('#btn-continue').click(function(){
+        $('#result-frame').css('display', 'none');
+    });
 
 });
 
