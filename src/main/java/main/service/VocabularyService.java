@@ -17,6 +17,7 @@ import java.util.logging.SocketHandler;
 public class VocabularyService {
 
     WordsRepository wordsRepository;
+    int resultNumberCorrectWords = 0;
 
     @Autowired
     public VocabularyService(WordsRepository wordsRepository) {
@@ -107,5 +108,15 @@ public class VocabularyService {
 
     public Word getWordById(int id) {
         return wordsRepository.findById(id).get();
+    }
+
+
+    public void addNumberCorrectWords() {
+        resultNumberCorrectWords = resultNumberCorrectWords + 1;
+    }
+
+
+    public int getNumberCorrectWords() {
+        return resultNumberCorrectWords;
     }
 }

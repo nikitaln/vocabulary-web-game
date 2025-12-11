@@ -1,5 +1,7 @@
 $(function(){
 
+    let counterCorrectWord = 0;
+    let counterUncorrectedWord = 0;
     //нажатие КНОПКИ ПРОВЕРКИ слова
     $('#btn-check-word').click(function(){
 
@@ -17,6 +19,8 @@ $(function(){
                 if (response === 'true') {
 //                    $('#result-frame').css('display', 'flex');
 //                    $('#result').text('Верно').css('color', 'green');
+                    counterCorrectWord = counterCorrectWord + 1;
+                    $('#result-true').text(counterCorrectWord);
                     $('#output-en-word').css('color', 'greenyellow');
                     $('#btn-check-word').css('display', 'none');
 
@@ -24,6 +28,8 @@ $(function(){
                 //$('#result-translate').text('Неверный перевод').css('color', 'red');
 //                    $('#result-frame').css('display', 'flex');
 //                    $('#result').text('Неверно').css('color', 'red');
+                    counterUncorrectedWord = counterUncorrectedWord + 1;
+                    $('#result-false').text(counterUncorrectedWord);
                     $('#output-en-word').css('color', 'red');
 
                 }
@@ -79,7 +85,6 @@ $(function(){
     $('#btn-continue').click(function(){
         $('#result-frame').css('display', 'none');
     });
-
 });
 
 

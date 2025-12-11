@@ -49,6 +49,11 @@ public class DefaultController {
         String ruWordFromWeb = word.getRuWord();
 
         if (ruWordFromDB.equals(ruWordFromWeb)) {
+            /**
+             * Сюда можно вписать реализацию счетчика слов
+             */
+            System.out.println("Слово верно");
+            vocabularyService.addNumberCorrectWords();
             return ResponseEntity.ok("true");
 
         } else return ResponseEntity.ok("false");
