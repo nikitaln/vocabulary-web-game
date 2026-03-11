@@ -48,15 +48,22 @@ public class DefaultController {
         String ruWordFromDB = vocabularyService.getWordById(word.getId()).getRuWord();
         String ruWordFromWeb = word.getRuWord();
 
-        if (ruWordFromDB.equals(ruWordFromWeb)) {
-            /**
-             * Сюда можно вписать реализацию счетчика слов
-             */
-            System.out.println("Слово верно");
+        if (ruWordFromDB.contains(",")) {
+            String[] words = ruWordFromDB.split(", ");
+
+            for (int i = 0; i < words.length; i++) {
+
+                if (ruWordFromWeb.equals(words[i])) {
+                    vocabularyService.addNumberCorrectWords();
+                    return ResponseEntity.ok("true");
+                }
+            }
+        }
+        else if (ruWordFromDB.equals(ruWordFromWeb)) {
             vocabularyService.addNumberCorrectWords();
             return ResponseEntity.ok("true");
-
-        } else return ResponseEntity.ok("false");
+        }
+        return ResponseEntity.ok("false");
     }
 
 
